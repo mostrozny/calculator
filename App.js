@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
+import Calculator from "./Calculator";
 
 
 type Props = {};
@@ -15,8 +16,12 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-          <View style={styles.box} />
-        <Text style={styles.welcome}>Witam</Text>
+          <View style={styles.box}>
+              <Text style={styles.welcome}>CALCULATOR</Text>
+          </View>
+          <View>
+            <Calculator />
+          </View>
       </View>
 
     );
@@ -26,19 +31,19 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-      width: 100,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'stretch',
-    backgroundColor: 'black',
+    backgroundColor: 'white',
   },
   welcome: {
-    color: 'white',
-    fontSize: 20,
+    color: 'black',
+    fontSize: 40,
     textAlign: 'center',
     margin: 10,
   },
     box: {
-            height: 10,
-    backgroundColor: 'steelblue',
+    borderRadius: 10,
+    margin: 10,
+    backgroundColor: 'grey',
     },
 });

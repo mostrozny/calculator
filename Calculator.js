@@ -11,14 +11,33 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 
 
 type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-          <View style={styles.box}>
-              <Text style={styles.welcome}>CALCULATOR</Text>
-          </View>
+export default class Calculator extends Component<Props> {
 
+
+    render() {
+    return (
+      <View>
+          <View>
+              <Text style={styles.calculatorDisplay}>0</Text>
+          </View>
+          <View style={styles.buttonContainer}>
+            <View style={styles.buttonStyle}><Button title="1" /></View>
+            <View style={styles.buttonStyle}><Button title="2" /></View>
+            <View style={styles.buttonStyle}><Button title="3" /></View>
+            <View style={styles.buttonStyle}><Button title="-" /></View>
+            <View style={styles.buttonStyle}><Button title="5" /></View>
+            <View style={styles.buttonStyle}><Button title="6" /></View>
+            <View style={styles.buttonStyle}><Button title="7" /></View>
+            <View style={styles.buttonStyle}><Button title="+" /></View>
+            <View style={styles.buttonStyle}><Button title="8" /></View>
+            <View style={styles.buttonStyle}><Button title="9" /></View>
+            <View style={styles.buttonStyle}><Button title="0" /></View>
+            <View style={styles.buttonStyle}><Button title="*" /></View>
+            <View style={styles.buttonStyle}><Button title="/" /></View>
+            <View style={styles.buttonStyle}><Button title="CE" /></View>
+            <View style={styles.buttonStyle}><Button title="C" /></View>
+            <View style={styles.buttonStyle}><Button title="=" /></View>
+          </View>
       </View>
 
     );
@@ -26,21 +45,23 @@ export default class App extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  buttonContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    backgroundColor: 'white',
+    flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+     },
+  calculatorDisplay: {
+      fontSize: 30,
+      padding: 10,
+      textAlign: 'right',
+      backgroundColor: 'grey',
+      color: 'black',
   },
-  welcome: {
-    color: 'black',
-    fontSize: 40,
-    textAlign: 'center',
-    margin: 10,
-  },
-    box: {
-    borderRadius: 10,
-    margin: 10,
-    backgroundColor: 'grey',
-    },
+  buttonStyle: {
+    width: 90,
+    height: 60,
+      margin: 5,
+      paddingTop: 30,
+  }
 });
