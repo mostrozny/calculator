@@ -12,16 +12,31 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 
 type Props = {};
 export default class Calculator extends Component<Props> {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            calcDisplay: "0",
+        }
+    }
+
+    handlePressOne = () => {
+        console.error("blablabla");
+  /*      const cine = e.value;*/
+     /*   this.setState({
+            calcDisplay: cine,
+        })*/
+    };
 
     render() {
+        let displayCalc = this.state.calcDisplay;
     return (
       <View>
           <View>
-              <Text style={styles.calculatorDisplay}>0</Text>
+              <Text style={styles.calculatorDisplay}>{displayCalc}</Text>
           </View>
           <View style={styles.buttonContainer}>
-            <View style={styles.buttonStyle}><Button title="1" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne} title="1" /></View>
             <View style={styles.buttonStyle}><Button title="2" /></View>
             <View style={styles.buttonStyle}><Button title="3" /></View>
             <View style={styles.buttonStyle}><Button title="-" /></View>
