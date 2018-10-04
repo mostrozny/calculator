@@ -1,3 +1,3 @@
 # calculator
 
-Simply calculator in react native, 
+### Simply calculator written in react native   
