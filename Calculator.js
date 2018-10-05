@@ -16,16 +16,13 @@ export default class Calculator extends Component<Props> {
         super(props);
 
         this.state = {
-            calcDisplay: "0",
+            calcDisplay: "1",
         }
     }
 
-    handlePressOne = () => {
-        console.error("blablabla");
-  /*      const cine = e.value;*/
-     /*   this.setState({
-            calcDisplay: cine,
-        })*/
+    handlePressOne = param => (event) => {
+        console.error(param);
+
     };
 
     render() {
@@ -36,22 +33,22 @@ export default class Calculator extends Component<Props> {
               <Text style={styles.calculatorDisplay}>{displayCalc}</Text>
           </View>
           <View style={styles.buttonContainer}>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne} title="1" /></View>
-            <View style={styles.buttonStyle}><Button title="2" /></View>
-            <View style={styles.buttonStyle}><Button title="3" /></View>
-            <View style={styles.buttonStyle}><Button title="-" /></View>
-            <View style={styles.buttonStyle}><Button title="5" /></View>
-            <View style={styles.buttonStyle}><Button title="6" /></View>
-            <View style={styles.buttonStyle}><Button title="7" /></View>
-            <View style={styles.buttonStyle}><Button title="+" /></View>
-            <View style={styles.buttonStyle}><Button title="8" /></View>
-            <View style={styles.buttonStyle}><Button title="9" /></View>
-            <View style={styles.buttonStyle}><Button title="0" /></View>
-            <View style={styles.buttonStyle}><Button title="*" /></View>
-            <View style={styles.buttonStyle}><Button title="/" /></View>
-            <View style={styles.buttonStyle}><Button title="CE" /></View>
-            <View style={styles.buttonStyle}><Button title="C" /></View>
-            <View style={styles.buttonStyle}><Button title="=" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(1)} title="1" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(2)} title="2" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(3)} title="3" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("-")} title="-" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(5)} title="5" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(6)} title="6" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(7)} title="7" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("+")} title="+" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(8)} title="8" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(9)} title="9" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(0)} title="0" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("*")} title="*" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("/")} title="/" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("CE")} title="CE" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("C")} title="C" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne('=')} title="=" /></View>
           </View>
       </View>
 
