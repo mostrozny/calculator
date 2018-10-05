@@ -20,13 +20,29 @@ export default class Calculator extends Component<Props> {
         }
     }
 
-    handlePressOne = param => (event) => {
+    handlePressNumber = param => (event) => {
        // console.error(param);
         const copy = this.state.calcDisplay;
         this.setState({
             calcDisplay: [...copy, param],
+            sign: '',
+            primaryNumber: 0,
+            secondaryNumber: 0,
         })
     };
+
+    handlePressSymbol = param => (event) => {
+       // console.error(param);
+        let firstNumber = this.state.calcDisplay;
+
+        this.setState({
+            sign: param,
+            primaryNumber: firstNumber,
+        });
+        
+    };
+
+
 
     render() {
         let displayCalc = this.state.calcDisplay;
@@ -36,22 +52,22 @@ export default class Calculator extends Component<Props> {
               <Text style={styles.calculatorDisplay}>{displayCalc}</Text>
           </View>
           <View style={styles.buttonContainer}>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(1)} title="1" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(2)} title="2" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(3)} title="3" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("-")} title="-" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(5)} title="5" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(6)} title="6" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(7)} title="7" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("+")} title="+" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(8)} title="8" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(9)} title="9" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne(0)} title="0" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("*")} title="*" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("/")} title="/" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("CE")} title="CE" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne("C")} title="C" /></View>
-            <View style={styles.buttonStyle}><Button onPress={this.handlePressOne('=')} title="=" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(1)} title="1" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(2)} title="2" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(3)} title="3" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressSymbol("-")} title="-" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(5)} title="5" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(6)} title="6" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(7)} title="7" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressSymbol("+")} title="+" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(8)} title="8" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(9)} title="9" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber(0)} title="0" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressSymbol("*")} title="*" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressSymbol("/")} title="/" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber("CE")} title="CE" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressNumber("C")} title="C" /></View>
+            <View style={styles.buttonStyle}><Button onPress={this.handlePressSymbol('=')} title="=" /></View>
           </View>
       </View>
 
