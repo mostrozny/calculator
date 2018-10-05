@@ -21,8 +21,11 @@ export default class Calculator extends Component<Props> {
     }
 
     handlePressOne = param => (event) => {
-        console.error(param);
-
+       // console.error(param);
+        const copy = this.state.calcDisplay;
+        this.setState({
+            calcDisplay: [...copy, param],
+        })
     };
 
     render() {
