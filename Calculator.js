@@ -39,7 +39,7 @@ export default class Calculator extends Component<Props> {
             sign: param,
             primaryNumber: firstNumber,
         });
-        
+
     };
 
 
